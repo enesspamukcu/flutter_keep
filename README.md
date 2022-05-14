@@ -1,16 +1,19 @@
-# flutter_keep
+Flutter Keep
 
-A new Flutter project.
+## Libraries 
 
-## Getting Started
+- Provider : https://pub.dev/packages/provider
+- Flutter Staggared Grid View : https://pub.dev/packages/flutter_staggered_grid_view
+- Hive : https://pub.dev/packages/hive
+- Hive Flutter : https://pub.dev/packages/hive_flutter
+- Hive Generator : https://pub.dev/packages/hive_generator
+- Build Runner : https://pub.dev/packages/build_runner
+- Google Fonts : https://pub.dev/packages/google_fonts
+- Intl : https://pub.dev/packages/intl
+- Uuid : https://pub.dev/packages/uuid
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
