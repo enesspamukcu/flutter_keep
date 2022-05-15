@@ -3,6 +3,7 @@ import 'package:flutter_keep/database/local_storage.dart';
 import 'package:flutter_keep/models/note.dart';
 import 'package:flutter_keep/pages/edit_note_page.dart';
 import 'package:flutter_keep/provider/note_view_model.dart';
+import 'package:flutter_keep/provider/theme_provider.dart';
 import 'package:flutter_keep/widgets/drawer.dart';
 import 'package:flutter_keep/widgets/note_container.dart';
 import 'package:flutter_keep/widgets/sliver_app_bar.dart';
@@ -14,7 +15,8 @@ class ArchivedNotes extends StatelessWidget {
   final HiveLocalStorage hiveLocalStorage = HiveLocalStorage();
   @override
   Widget build(BuildContext context) {
-     final noteViewModel = Provider.of<NoteViewModel>(context);
+     Provider.of<NoteViewModel>(context);
+     Provider.of<ThemeProvider>(context);
     return Scaffold(
       drawer:  const Drawerr(),
       body: SafeArea(
@@ -32,7 +34,7 @@ class ArchivedNotes extends StatelessWidget {
                     List<Note>noteListReversed = noteList.reversed.toList();
                     final noteIndex2 = noteListReversed[index];
                       return noteIndex2.isArchived ==true ? NoteContainer(
-                        color: Color(noteViewModel.hiveLocalStorage.noteBox.getAt(index)?.color ?? Colors.orange.value),
+                        color: Color(noteIndex2.color),
                         onPress: () {
                           Navigator.push(
                               context,
