@@ -50,7 +50,6 @@ class _EditNotePageState extends State<EditNotePage> {
           elevation: 0,
           leading: IconButton(
               onPressed: () {
-                debugPrint('Index : ' + widget.index.toString());
                 noteViewModel.updateSearchDelegate(
                     widget.editNote, controllerNote.text, controllerTitle.text);
                 Navigator.pop(context);
@@ -242,13 +241,11 @@ class _EditNotePageState extends State<EditNotePage> {
                               ),
                               ListTile(
                                 onTap: () {
-                                  setState(() {
                                     widget.editNote.isArchived == false
                                         ? moveToArchive(noteViewModel,
                                             controllerNote, controllerTitle)
                                         : unArchived(noteViewModel,
                                             controllerNote, controllerTitle);
-                                  });
                                   Navigator.pop(context);
                                   Navigator.of(context).pop();
                                 },

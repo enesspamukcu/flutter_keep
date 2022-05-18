@@ -4,7 +4,6 @@ import 'package:flutter_keep/models/note.dart';
 import 'package:flutter_keep/pages/edit_note_page.dart';
 import 'package:flutter_keep/pages/create_note.page.dart';
 import 'package:flutter_keep/provider/note_view_model.dart';
-import 'package:flutter_keep/provider/theme_provider.dart';
 import 'package:flutter_keep/widgets/drawer.dart';
 import 'package:flutter_keep/widgets/note_container.dart';
 import 'package:flutter_keep/widgets/sliver_app_bar.dart';
@@ -18,7 +17,6 @@ class NotesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Provider.of<NoteViewModel>(context);
-    Provider.of<ThemeProvider>(context);
     return Scaffold(
       drawer: const Drawerr(),
       body: NestedScrollView(headerSliverBuilder: (context, innerBoxIsScrolled) {

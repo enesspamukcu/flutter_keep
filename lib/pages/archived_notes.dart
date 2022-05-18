@@ -3,7 +3,6 @@ import 'package:flutter_keep/database/local_storage.dart';
 import 'package:flutter_keep/models/note.dart';
 import 'package:flutter_keep/pages/edit_note_page.dart';
 import 'package:flutter_keep/provider/note_view_model.dart';
-import 'package:flutter_keep/provider/theme_provider.dart';
 import 'package:flutter_keep/widgets/drawer.dart';
 import 'package:flutter_keep/widgets/note_container.dart';
 import 'package:flutter_keep/widgets/sliver_app_bar.dart';
@@ -15,8 +14,7 @@ class ArchivedNotes extends StatelessWidget {
   final HiveLocalStorage hiveLocalStorage = HiveLocalStorage();
   @override
   Widget build(BuildContext context) {
-     Provider.of<NoteViewModel>(context);
-     Provider.of<ThemeProvider>(context);
+    Provider.of<NoteViewModel>(context);
     return Scaffold(
       drawer:  const Drawerr(),
       body: SafeArea(
