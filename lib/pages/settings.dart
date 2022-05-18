@@ -4,14 +4,8 @@ import 'package:flutter_keep/provider/theme_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class Settingss extends StatefulWidget {
+class Settingss extends StatelessWidget {
   const Settingss({Key? key}) : super(key: key);
-
-  @override
-  State<Settingss> createState() => _SettingssState();
-}
-
-class _SettingssState extends State<Settingss> {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -37,10 +31,7 @@ class _SettingssState extends State<Settingss> {
                             child:ListTile(
                               title: Text('Open Sans',style: themeProvider.themeControl(16,FontWeight.normal)),
                               leading:  Radio(value: GoogleFonts.openSansTextTheme(), groupValue: themeProvider.choosedFont, onChanged: (newValue){
-                                setState(() {
                                   themeProvider.putThemeModel(ThemeModel(fonttStyle: FonttStyle.opensans,lightMode:themeProvider.hiveLocalStorage.fontStyleBox.getAt(0)!.lightMode));
-                                });
-                                
                             }),
                             )
                           ),
@@ -49,10 +40,7 @@ class _SettingssState extends State<Settingss> {
                             child:ListTile(
                               title:  Text('Lato',style: themeProvider.themeControl(16,FontWeight.normal)),
                               leading:  Radio(value: GoogleFonts.latoTextTheme(), groupValue: themeProvider.choosedFont, onChanged: (newValue){
-                                setState(() {
-                                   themeProvider.putThemeModel(ThemeModel(fonttStyle: FonttStyle.lato,lightMode:themeProvider.hiveLocalStorage.fontStyleBox.getAt(0)!.lightMode));
-                                });
-                                
+                                   themeProvider.putThemeModel(ThemeModel(fonttStyle: FonttStyle.lato,lightMode:themeProvider.hiveLocalStorage.fontStyleBox.getAt(0)!.lightMode));                                
                             }),
                             )
                           ),
@@ -61,9 +49,7 @@ class _SettingssState extends State<Settingss> {
                             child:ListTile(
                               title:  Text('Felipa',style: themeProvider.themeControl(16,FontWeight.normal)),
                               leading:  Radio(value:GoogleFonts.felipaTextTheme(), groupValue: themeProvider.choosedFont, onChanged: (newValue){
-                                setState(() {
                                    themeProvider.putThemeModel(ThemeModel(fonttStyle: FonttStyle.felipa,lightMode:themeProvider.hiveLocalStorage.fontStyleBox.getAt(0)!.lightMode));
-                                });
                             }),
                             )
                           ),
@@ -72,9 +58,7 @@ class _SettingssState extends State<Settingss> {
                             child:ListTile(
                               title:  Text('Josefin Sans',style: themeProvider.themeControl(16,FontWeight.normal)),
                               leading:  Radio(value: GoogleFonts.josefinSansTextTheme(), groupValue: themeProvider.choosedFont ,onChanged: (newValue){
-                               setState(() {
                                   themeProvider.putThemeModel(ThemeModel(fonttStyle: FonttStyle.josefin,lightMode:themeProvider.hiveLocalStorage.fontStyleBox.getAt(0)!.lightMode));
-                                });
                             }),
                             )
                           ),
@@ -99,9 +83,7 @@ class _SettingssState extends State<Settingss> {
               trailing: Switch(
               value: themeProvider.hiveLocalStorage.fontStyleBox.getAt(0)!.lightMode,
               onChanged: (newValue) {
-                setState(() {
                   themeProvider.switchState(newValue);  
-                });
               },
               inactiveTrackColor: const Color.fromARGB(255, 37, 54, 148),
               inactiveThumbColor: Colors.black,
